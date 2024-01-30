@@ -1,6 +1,6 @@
 import { IAddUserDto } from "../domain/interfaces/dtos/addUser";
 import { GetAllUserRepo } from "../domain/interfaces/repos/implementations/getAllUserRepoImp";
-import { SaveUserRepo } from "../domain/interfaces/repos/implementations/saveUserRepoImp";
+import { AddUserRepo } from "../domain/interfaces/repos/implementations/addUserRepoImp";
 import { AddUser } from "../domain/useCases/addUser/addUser";
 import { GetAllUsers } from "../domain/useCases/getUser/getAllUsers";
 
@@ -14,7 +14,7 @@ export class UserGateway {
   }
 
   static async addUser(user: IAddUserDto) {
-    const iUserRepo = new SaveUserRepo();
+    const iUserRepo = new AddUserRepo();
     const i = new AddUser(iUserRepo);
     const res = await i.execute(user);
 

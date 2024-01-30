@@ -1,10 +1,10 @@
 import { IAddUserDto } from "../../interfaces/dtos/addUser";
-import { ISaveUserRepo } from "../../interfaces/repos/saveUserRepo";
+import { IAddUserRepo } from "../../interfaces/repos/addUserRepo";
 
 export class AddUser {
-  constructor(private addUserRepo: ISaveUserRepo) {}
+  constructor(private addUserRepo: IAddUserRepo) {}
 
   public async execute(user: IAddUserDto) {
-    return this.addUserRepo.saveUser(user);
+    return this.addUserRepo.addUser(user);
   }
 }

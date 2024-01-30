@@ -1,9 +1,9 @@
 import { UserModel } from "../../../../infrastructure/database/sequelize/models/userModel";
 import { IAddUserDto } from "../../dtos/addUser";
-import { ISaveUserRepo } from "../saveUserRepo";
+import { IAddUserRepo } from "../addUserRepo";
 
-export class SaveUserRepo implements ISaveUserRepo {
-  async saveUser(user: IAddUserDto): Promise<void> {
+export class AddUserRepo implements IAddUserRepo {
+  async addUser(user: IAddUserDto): Promise<void> {
     const users = await UserModel.create({ name: user.name });
   }
 }
