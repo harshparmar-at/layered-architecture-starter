@@ -17,9 +17,8 @@ export class UserGateway {
     const iUserRepo = new AddUserRepo();
     const i = new AddUser(iUserRepo);
     const res = await i.execute(user);
-
-    console.log(res);
   }
 }
 
 UserGateway.getAllUsers();
+// UserGateway.addUser({ name: "dhruvil", city: "nadiad", birthDate: "2001-01-01" });

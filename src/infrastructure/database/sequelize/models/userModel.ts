@@ -15,6 +15,18 @@ UserModel.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    birthDate: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   { tableName: "users", sequelize, timestamps: false }
 );
