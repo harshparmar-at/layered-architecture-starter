@@ -1,7 +1,6 @@
-import { UserMapper } from "../../../../infrastructure/database/sequelize/mappers/userMapper";
-import { UserModel } from "../../../../infrastructure/database/sequelize/models/userModel";
-import { IAddUserDto } from "../../dtos/addUser";
-import { IAddUserRepo, IAddUserRepoDto } from "../addUserRepo";
+import { UserMapper } from "../database/sequelize/mappers/userMapper";
+import { UserModel } from "../database/sequelize/models/userModel";
+import { IAddUserRepo, IAddUserRepoDto } from "../../domain/interfaces/repos/addUserRepo";
 
 export class AddUserRepo implements IAddUserRepo {
   async addUser(user: IAddUserRepoDto): Promise<void> {
