@@ -1,6 +1,5 @@
 export interface IAddUserDto {
   name: string;
-  birthDate: string;
+  birthDate: Date;
   city: string;
-  id: number;
 }

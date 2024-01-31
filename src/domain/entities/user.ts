@@ -1,7 +1,33 @@
-import { IAddUserDto } from "../interfaces/dtos/addUser";
+interface IUser {
+  name: string;
+  city: string;
+  birthDate: Date;
+  id?: number;
+}
 
 export class User {
-  constructor(private user: IAddUserDto) {}
+  constructor(private user: IUser) {}
+
+  // getId() {
+  //   return this.user.id;
+  // }
+
+  getName() {
+    return this.user.name;
+  }
+
+  getCity() {
+    return this.user.city;
+  }
+
+  getBirthDate() {
+    return this.user.birthDate;
+  }
+
+  getAge() {
+    return this.calculateAge();
+  }
+
   calculateAge() {
     const currentDate = new Date();
     const dob = new Date(this.user.birthDate);
@@ -20,12 +46,5 @@ export class User {
     }
 
     return age;
-  }
-
-  getUserInfo() {
-    return {
-      ...this.user,
-      age: this.calculateAge(),
-    };
   }
 }

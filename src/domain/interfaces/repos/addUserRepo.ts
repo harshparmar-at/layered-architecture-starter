@@ -1,12 +1,5 @@
-import { IAddUserDto } from "../dtos/addUser";
+import { User } from "../../entities/user";
 
-export interface IAddUserRepoDto {
-  name: string;
-  birthDate: string;
-  city: string;
-  age: number;
-}
-
-export interface IAddUserRepo {
-  addUser(user: IAddUserRepoDto): Promise<void>;
+export interface ISaveUserRepo {
+  saveUser(user: User): Promise<void>;
 }

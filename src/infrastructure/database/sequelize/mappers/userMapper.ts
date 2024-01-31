@@ -1,18 +1,15 @@
-import { GetAllUser } from "../../../../domain/entities/getAllUser";
 import { User } from "../../../../domain/entities/user";
-import { IAddUserRepoDto } from "../../../../domain/interfaces/repos/addUserRepo";
 import { UserModel } from "../models/userModel";
 
 export class UserMapper {
-  static toDomain(usersFromDb: UserModel[]): GetAllUser[] {
-    const users: GetAllUser[] = [];
+  static toDomain(usersFromDb: UserModel[]): User[] {
+    const users: User[] = [];
     usersFromDb.forEach((data) => {
-      const user = new GetAllUser({
+      const user = new User({
         name: data.dataValues.name,
         id: data.dataValues.id,
         city: data.dataValues.city,
         birthDate: data.dataValues.birthDate,
-        age: data.dataValues.age,
       });
 
       users.push(user);
@@ -21,12 +18,15 @@ export class UserMapper {
     return users;
   }
 
-  static toPersistence(user: IAddUserRepoDto) {
+  static toPersistence(user: User) {
+    const name = user.getName();
+    const birthDate = user.getBirthDate();
+    const city = user.getCity();
+
     return {
-      name: user.name,
-      birthDate: user.birthDate,
-      city: user.city,
-      age: user.age,
+      name: name,
+      birthDate: birthDate,
+      city: city,
     };
   }
 }
