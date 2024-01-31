@@ -1,12 +1,12 @@
 import { User } from "../../entities/user";
 import { IAddUserDto } from "../../interfaces/dtos/addUser";
-import { ISaveUserRepo } from "../../interfaces/repos/addUserRepo";
+import { IUserRepo } from "../../interfaces/repos/userRepo";
 
 export class AddUser {
-  constructor(private saveUserRepo: ISaveUserRepo) {}
+  constructor(private saveUserRepo: IUserRepo) {}
 
   public async execute(addUserDto: IAddUserDto) {
     const user = new User(addUserDto);
-    return this.saveUserRepo.saveUser(user);
+    return this.saveUserRepo.save(user);
   }
 }

@@ -8,9 +8,9 @@ interface IUser {
 export class User {
   constructor(private user: IUser) {}
 
-  // getId() {
-  //   return this.user.id;
-  // }
+  getId() {
+    return this.user.id;
+  }
 
   getName() {
     return this.user.name;
