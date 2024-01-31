@@ -1,8 +1,5 @@
+import { GetAllUser } from "../../entities/getAllUser";
+
 export interface IGetAllUserRepo {
-  getAllUser(): Promise<
-    {
-      name: string;
-      id: number;
-    }[]
-  >;
+  getAllUser(): Promise<GetAllUser[]>;
 }

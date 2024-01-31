@@ -1,17 +1,20 @@
+import { GetAllUser } from "../../../../domain/entities/getAllUser";
+import { User } from "../../../../domain/entities/user";
 import { IAddUserRepoDto } from "../../../../domain/interfaces/repos/addUserRepo";
 import { UserModel } from "../models/userModel";
 
 export class UserMapper {
-  static toDomain(usersFromDb: UserModel[]) {
-    const users: any[] = [];
+  static toDomain(usersFromDb: UserModel[]): GetAllUser[] {
+    const users: GetAllUser[] = [];
     usersFromDb.forEach((data) => {
-      const user = {
+      const user = new GetAllUser({
         name: data.dataValues.name,
         id: data.dataValues.id,
         city: data.dataValues.city,
         birthDate: data.dataValues.birthDate,
         age: data.dataValues.age,
-      };
+      });
+
       users.push(user);
     });
 

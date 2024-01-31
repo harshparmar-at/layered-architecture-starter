@@ -21,4 +21,4 @@ export class UserGateway {
 }
 
 UserGateway.getAllUsers();
-// UserGateway.addUser({ name: "dhruvil", city: "nadiad", birthDate: "2001-01-01" });
+// UserGateway.addUser({ name: "harsh", city: "Ahmadabad", birthDate: "2001-06-25" });
