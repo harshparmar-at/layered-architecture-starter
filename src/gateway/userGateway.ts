@@ -5,17 +5,17 @@ import { GetAllUsers } from "../domain/useCases/getUser/getAllUsers";
 
 export class UserGateway {
   static async getAllUsers() {
-    const iUserRepo = new UserRepo();
-    const i = new GetAllUsers(iUserRepo);
-    const res = await i.execute();
+    const userRepo = new UserRepo();
+    const users = new GetAllUsers(userRepo);
+    const res = await users.execute();
 
     console.log(res);
   }
 
   static async addUser(user: IAddUserDto) {
-    const iUserRepo = new UserRepo();
-    const i = new AddUser(iUserRepo);
-    const res = await i.execute(user);
+    const userRepo = new UserRepo();
+    const addUser = new AddUser(userRepo);
+    const res = await addUser.execute(user);
   }
 }
 
