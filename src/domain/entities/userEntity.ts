@@ -1,27 +1,20 @@
-interface IUser {
-  name: string;
-  city: string;
-  birthDate: Date;
-  id?: number;
-}
-
-export class User {
-  constructor(private user: IUser) {}
+export class UserEntity {
+  constructor(private name: string, private city: string, private birthDate: Date, private id?: number) {}
 
   getId() {
-    return this.user.id;
+    return this.id;
   }
 
   getName() {
-    return this.user.name;
+    return this.name;
   }
 
   getCity() {
-    return this.user.city;
+    return this.city;
   }
 
   getBirthDate() {
-    return this.user.birthDate;
+    return this.birthDate;
   }
 
   getAge() {
@@ -30,7 +23,7 @@ export class User {
 
   calculateAge() {
     const currentDate = new Date();
-    const dob = new Date(this.user.birthDate);
+    const dob = new Date(this.birthDate);
     const birthYear = dob.getFullYear();
     const currentYear = currentDate.getFullYear();
 

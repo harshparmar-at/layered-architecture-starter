@@ -1,6 +1,6 @@
-import { User } from "../../entities/user";
+import { UserEntity } from "../../entities/userEntity";
 
 export interface IUserRepo {
-  save(user: User): Promise<void>;
-  getAll(): Promise<User[]>;
+  save(user: UserEntity): Promise<void>;
+  getAll(): Promise<UserEntity[]>;
 }
